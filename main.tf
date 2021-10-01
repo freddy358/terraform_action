@@ -7,8 +7,8 @@ provider "aws" {
 
 resource "aws_instance" "my_Ubuntu" {
   count         = 3
-  ami           = "ami-5866eb68"
-  instance_type = "t3.small"
+  ami           = "ami-0c2d06d50ce30b442"
+  instance_type = "t3.micro"
 
   tags = {
     Name    = "My Ubuntu Server"
@@ -18,8 +18,8 @@ resource "aws_instance" "my_Ubuntu" {
 }
 
 resource "aws_instance" "my_Amazon" {
-  ami           = "ami-5866eb68"
-  instance_type = "t3.small"
+  ami           = "ami-0c2d06d50ce30b442"
+  instance_type = "t3.micro"
 
   tags = {
     Name    = "My Amazon Server"
