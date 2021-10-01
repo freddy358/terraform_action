@@ -1,5 +1,5 @@
 provider "aws" {
-  region     = "eu-west-1"
+  region     = "us-west-2"
   access_key = "AKIATXG2KUDTUDIJ4RBK"
   secret_key = "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"
 }
@@ -7,7 +7,7 @@ provider "aws" {
 
 resource "aws_instance" "my_Ubuntu" {
   count         = 3
-  ami           = "ami-05c2e971"
+  ami           = "ami-5866eb68"
   instance_type = "t3.micro"
 
   tags = {
@@ -18,7 +18,7 @@ resource "aws_instance" "my_Ubuntu" {
 }
 
 resource "aws_instance" "my_Amazon" {
-  ami           = "ami-05c2e971"
+  ami           = "ami-5866eb68"
   instance_type = "t3.micro"
 
   tags = {
