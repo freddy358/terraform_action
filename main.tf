@@ -4,7 +4,6 @@ provider "aws" {
   secret_key = "zhm4ZsIS6ice+SNfvtEFHLGefhgowRwYgVvL7/rd"
 }
 
-
 resource "aws_instance" "my_Ubuntu" {
   count         = 3
   ami           = "ami-0c2d06d50ce30b442"
