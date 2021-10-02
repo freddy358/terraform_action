@@ -17,6 +17,7 @@ resource "aws_instance" "my_Ubuntu" {
   }
 }
 
+
 resource "aws_instance" "my_Amazon" {
   ami           = "ami-0c2d06d50ce30b442"
   instance_type = "t3.micro"
