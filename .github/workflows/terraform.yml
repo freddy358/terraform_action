@@ -23,12 +23,12 @@ jobs:
       uses: actions/checkout@master
 
     # Add gitHub repo secrets
-    # - name: Configure AWS Credentials
-    #   uses: aws-actions/configure-aws-credentials@v1
-    #   with:
-    #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    #     aws-region: us-west-2
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-2
 
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
@@ -45,12 +45,12 @@ jobs:
     - name: Terraform Format
       run: terraform fmt -check
 
-    - name: Setup AWS Credentials
-      run: |
-        mkdir -p .aws
-        echo "[production]" >> .aws/credentials
-        echo "aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}" >> .aws/credentials
-        echo "aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> .aws/credentials
+    # - name: Setup AWS Credentials
+    #   run: |
+    #     mkdir -p .aws
+    #     echo "[production]" >> .aws/credentials
+    #     echo "aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}" >> .aws/credentials
+    #     echo "aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> .aws/credentials
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
